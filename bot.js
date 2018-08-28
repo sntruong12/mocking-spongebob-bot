@@ -1,4 +1,7 @@
 const Twit = require('twit');
+
+const fs = require('fs');
+
 const config = require('./config.js')
 
 //Set up keys for using Twit module
@@ -10,15 +13,16 @@ const T = new Twit(config);
 //
 
 let getTweetsParams = {
-  screen_name: 'tanner_johnson',
+  screen_name: 'Lateshow414',
   count: 1,
   exclude_replies: true,
   include_rts: false
 };
 
-let originalTweet = []
+let originalTweet = [];
 let convertedTweetArray = [];
 let convertedTweet;
+let mockingImage = fs.readFileSync('./assets/mocking-sb.jpg', {encoding: 'base64'});
 
 T.get('statuses/user_timeline', getTweetsParams)
   .catch(function (err) {
@@ -62,7 +66,7 @@ T.get('statuses/user_timeline', getTweetsParams)
   //post tweet
 
   .then(function(result){
-    T.post('statuses/update', {status: `Tan: "${originalTweet}"\nme: ${result}`}, function(err, data, response) {
+    T.post('statuses/update', {status: `Stan: "${originalTweet}"\nme: ${result}`}, function(err, data, response) {
       if (err) {
         console.log('no tweet went out');
         console.log(err);
