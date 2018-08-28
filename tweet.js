@@ -5,12 +5,13 @@ const config = require('./config.js')
 const T = new Twit(config);
 
 module.exports = function mockingSpongeBob () {
-  //
-  // Check user most recent tweets and convert tweet
-  //
 
-  let getTweetsParams = {
-    screen_name: 'tanner_johnson',
+  // Twitter @ names
+  // targetUser should be the @ name of the user your bot your bot is to mock
+  let targetUser = 'tanner_johnson';
+
+  let targetTweetsParams = {
+    screen_name: targetUser,
     count: 1,
     exclude_replies: true,
     include_rts: false
@@ -21,7 +22,11 @@ module.exports = function mockingSpongeBob () {
   let convertedTweet;
   let mockingImage = fs.readFileSync('./assets/mocking-sb.jpg', {encoding: 'base64'});
 
-  T.get('statuses/user_timeline', getTweetsParams)
+  //
+  // Get users most recent tweet that isn't a reply or a retweet
+  //
+
+  T.get('statuses/user_timeline', targetTweetsParams)
     .catch(function (err) {
       console.log('error');
     })
