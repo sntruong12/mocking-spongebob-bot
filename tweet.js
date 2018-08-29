@@ -1,6 +1,7 @@
 const Twit = require('twit');
 const fs = require('fs');
-const config = require('./config.js')
+const config = require('./config.js');
+const twitter_users = require('./twitter-users.js');
 
 const T = new Twit(config);
 
@@ -8,10 +9,9 @@ module.exports = function mockingSpongeBob () {
 
   // Twitter @ names
   // targetUser should be the @ name of the user your bot your bot is to mock
-  let targetUser = 'tanner_johnson';
 
   let targetTweetsParams = {
-    screen_name: targetUser,
+    screen_name: twitter_users.target,
     count: 1,
     exclude_replies: true,
     include_rts: false
