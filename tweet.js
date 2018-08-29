@@ -23,7 +23,7 @@ module.exports = function mockingSpongeBob () {
   let mockingImage = fs.readFileSync('./assets/mocking-sb.jpg', {encoding: 'base64'});
 
   //
-  // Get users most recent tweet that isn't a reply or a retweet
+  // Get target user most recent tweet that isn't a reply or a retweet
   //
 
   T.get('statuses/user_timeline', targetTweetsParams)
@@ -56,7 +56,7 @@ module.exports = function mockingSpongeBob () {
       return convertedTweetArray;
     })
 
-    //join array to form tweet string
+    //join array to form mocking tweet string
 
     .then(function(result) {
       // console.log(`Line 44 result: ${result}`)
