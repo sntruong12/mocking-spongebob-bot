@@ -1,4 +1,4 @@
 const tweet = require('./tweet.js');
 
-tweet();
-setInterval(tweet, 1000*10);
+// bot runs every 30 mins
+setInterval(tweet, 1000*60*30);
