@@ -1,3 +1,5 @@
+The bot is currently live @okiedokiebot on Twitter!
+
 Purpose
 ---
 
