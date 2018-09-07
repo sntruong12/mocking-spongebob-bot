@@ -53,6 +53,9 @@ Example:
 Procfile is necessary for Heroku in order to change the Dyno formation to worker.  
 This file will contain only the following text:  
 
+worker: [command for heroku to run]  
+
+My Procfile contained:  
 worker: node bot.js  
 
 Create a new app in heroku.  
