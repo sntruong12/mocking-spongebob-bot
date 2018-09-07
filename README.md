@@ -1,20 +1,20 @@
-The bot is currently live @okiedokiebot on Twitter!
+The bot is currently live @okiedokiebot on Twitter!  
 
 Purpose
 ---
 
 This is a Twitter bot that will monitor target user. The bot will grab the latest tweet from the target user and will translate the tweet into the mocking SpongeBob meme form.
 
-See this link to learn more about the Mocking SpongeBob meme.
-https://knowyourmeme.com/memes/mocking-spongebob
+See this link to learn more about the Mocking SpongeBob meme.  
+https://knowyourmeme.com/memes/mocking-spongebob  
 
-Example of functionality
-@targetUser tweets:
-sigh what is the meaning of life?
+Example of functionality  
+@targetUser tweets:  
+sigh what is the meaning of life?  
 
-The bot will then tweet out:
-targetUser: sigh what is the meaning of life?
-me: SiGh wHaT Is tHe mEaNiNg oF LiFe?
+The bot will then tweet out:  
+targetUser: sigh what is the meaning of life?  
+me: SiGh wHaT Is tHe mEaNiNg oF LiFe?  
 
 *The image of mocking spongebob will be attached to the tweet.
 
@@ -31,10 +31,10 @@ I used Heroku to deploy this app.
 
 Be sure to set the twitter-users.js to your bot twitter @ and the target user @.
 
-Create the following files in the root directory of the bot.js:
-config.js
-archive.json
-Procfile
+Create the following files in the root directory of the bot.js:  
+config.js  
+archive.json  
+Procfile  
 
 config.js will contain your API credentials from Twitter.
 
@@ -46,16 +46,16 @@ module.exports = {
 };
 
 archive.json should be an object with the property archive that has a value of an array with 5 or less values.
-Example:
+Example:  
 
-{"archive":["test1","test2","test3","test4"]}
+{"archive":["test1","test2","test3","test4"]}  
 
-Procfile is necessary for Heroku in order to change the Dyno formation to worker.
-This file will contain only the following text:
+Procfile is necessary for Heroku in order to change the Dyno formation to worker.  
+This file will contain only the following text:  
 
-worker: node bot.js
+worker: node bot.js  
 
-Create a new app in heroku.
-Be sure to install the heroku cli and git before moving forward.
-Run the commands as per heroku's instructions
-Be sure to turn off the web formation in heroku and turn on the worker formation.
+Create a new app in heroku.  
+Be sure to install the heroku cli and git before moving forward.  
+Run the commands as per heroku's instructions.  
+Be sure to turn off the web formation in heroku and turn on the worker formation.  
