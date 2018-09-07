@@ -27,6 +27,8 @@ Deploying
 ---
 I used Heroku to deploy this app.
 
+Be sure to set the twitter-users.js to your bot twitter @ and the target user @.
+
 Create the following files in the root directory of the bot.js:
 config.js
 archive.json
