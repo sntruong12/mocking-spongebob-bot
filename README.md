@@ -56,3 +56,4 @@ worker: node bot.js
 Create a new app in heroku.
 Be sure to install the heroku cli and git before moving forward.
 Run the commands as per heroku's instructions
+Be sure to turn off the web formation in heroku and turn on the worker formation.
