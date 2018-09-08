@@ -172,23 +172,20 @@ module.exports = function mockingSpongeBob () {
             };
             //process media on twitter
             T.post('media/metadata/create', metaParams, function (err, data, response) {
-              if(!err) {
 
-                let tweetParams = {
-                  status: `${targetUserName}: ${originalTweet}\nme: ${convertedTweet}`,
-                  media_ids: [mediaId]
-                }
-                //post tweet with media attached
-                T.post('statuses/update', tweetParams, function(err, data, response) {
-                  if (err) {
-                    console.log('no tweets going out');
-                  } else {
-                    console.log('mOcKiNg tImE!');
-                  }
-                })
-              } else {
-                console.log('media was not created!');
+              let tweetParams = {
+                status: `${targetUserName}: ${originalTweet}\nme: ${convertedTweet}`,
+                media_ids: [mediaId]
               }
+              //post tweet with media attached
+              T.post('statuses/update', tweetParams, function(err, data, response) {
+                if (err) {
+                  console.log('no tweets going out');
+                } else {
+                  console.log('mOcKiNg tImE!');
+                }
+              })
+              
             })
           })
         }
